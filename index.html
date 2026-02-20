@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>credit-card-form</title>
+  </head>
+  <body
+    class="bg-[#f5f5f5] h-screen flex flex-col gap-8 justify-center items-center"
+  >
+    <main
+      class="flex flex-col w-max-[720px] bg-white p-12 justify-start rounded-xl gap-10"
+    >
+      <h1 class="text-start">Payment Details</h1>
+      <form action="">
+        <div class="flex flex-col">
+          <label for="">Card Number</label>
+          <div class="flex border rounded-xl border-[#e4e4e4] p-4 gap-4 w-full">
+            <i class="fa-regular fa-credit-card text-[#929898]"> </i>
+            <input type="number" placeholder="1234 5678 8901 1234" />
+          </div>
+        </div>
+        <div class="flex flex-row justify-start">
+          <div class="flex flex-col p-2 justify-center">
+            <label for="">Expiry Date</label>
+            <input
+              type="text"
+              class="border rounded-xl p-3 border-[#929898]"
+              placeholder="MM/YY "
+            />
+          </div>
+          <div class="flex flex-col justify-center">
+            <label for="">CVV</label>
+            <input
+              type="text"
+              placeholder="123"
+              class="border gap-2 rounded-xl p-3 border-[#929898]"
+            />
+          </div>
+        </div>
+        <div class="flex flex-col justify-start">
+          <label for="">Card Holder Name</label>
+          <input
+            type="text"
+            placeholder="John Doe"
+            class="border gap-2 rounded-xl p-3 border-[#929898]"
+          />
+        </div>
+        <div class="flex p-5 max-w-full">
+          <button
+            class="flex justify-center items-center text-center bg-black w-full rounded-2xl p-4 gap-10 border text-white"
+          >
+            Play Now
+          </button>
+        </div>
+      </form>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
