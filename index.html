@@ -11,58 +11,111 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>credit-card-form</title>
+    <title>Credit Card Form</title>
   </head>
   <body
-    class="bg-[#f5f5f5] h-screen flex flex-col gap-8 justify-center items-center"
+    class="bg-[#f5f5f5] min-h-screen flex flex-col gap-8 justify-center items-center p-4"
   >
-    <main
-      class="flex flex-col w-max-[720px] bg-white p-12 justify-start rounded-xl gap-10"
-    >
-      <h1 class="text-start">Payment Details</h1>
-      <form action="">
-        <div class="flex flex-col">
-          <label for="">Card Number</label>
+    <main class="w-full max-w-xl bg-white p-8 md:p-12 rounded-xl shadow-sm">
+      <h1 class="text-2xl font-semibold mb-8">Payment Details</h1>
+
+      <form id="payment-form" class="flex flex-col gap-6" novalidate>
+        <div class="flex flex-col gap-2">
+          <label for="card-number">Card Number</label>
           <div class="flex border rounded-xl border-[#e4e4e4] p-4 gap-4 w-full">
-            <i class="fa-regular fa-credit-card text-[#929898]"> </i>
-            <input type="number" placeholder="1234 5678 8901 1234" />
+            <i
+              class="fa-regular fa-credit-card text-[#929898]"
+              aria-hidden="true"
+            ></i>
+            <input
+              id="card-number"
+              name="card-number"
+              type="nu"
+              inputmode="numeric"
+              autocomplete="cc-number"
+              placeholder="1234 5678 8901 1234"
+              class="w-full outline-none"
+              required
+            />
           </div>
         </div>
-        <div class="flex flex-row justify-start">
-          <div class="flex flex-col p-2 justify-center">
-            <label for="">Expiry Date</label>
+
+        <div class="flex flex-row justify-start gap-4">
+          <div class="flex flex-col gap-2 flex-1">
+            <label for="expiry-date">Expiry Date</label>
             <input
+              id="expiry-date"
+              name="expiry-date"
               type="text"
               class="border rounded-xl p-3 border-[#929898]"
-              placeholder="MM/YY "
+              placeholder="MM/YY"
+              autocomplete="cc-exp"
+              required
             />
           </div>
-          <div class="flex flex-col justify-center">
-            <label for="">CVV</label>
+
+          <div class="flex flex-col gap-2 flex-1">
+            <label for="cvv">CVV</label>
             <input
+              id="cvv"
+              name="cvv"
               type="text"
               placeholder="123"
-              class="border gap-2 rounded-xl p-3 border-[#929898]"
+              class="border rounded-xl p-3 border-[#929898]"
+              autocomplete="cc-csc"
+              inputmode="numeric"
+              required
             />
           </div>
         </div>
-        <div class="flex flex-col justify-start">
-          <label for="">Card Holder Name</label>
+
+        <div class="flex flex-col gap-2">
+          <label for="card-holder-name">Card Holder Name</label>
           <input
+            id="card-holder-name"
+            name="card-holder-name"
             type="text"
             placeholder="John Doe"
-            class="border gap-2 rounded-xl p-3 border-[#929898]"
+            class="border rounded-xl p-3 border-[#929898]"
+            autocomplete="cc-name"
+            required
           />
         </div>
-        <div class="flex p-5 max-w-full">
-          <button
-            class="flex justify-center items-center text-center bg-black w-full rounded-2xl p-4 gap-10 border text-white"
-          >
-            Play Now
-          </button>
-        </div>
+
+        <button
+          type="submit"
+          class="flex justify-center items-center text-center bg-black w-full rounded-2xl p-4 border text-white"
+        >
+          Pay Now
+        </button>
       </form>
     </main>
+
+    <section
+      id="success-modal"
+      class="bg-white hidden flex-col justify-center items-center rounded-xl p-10 gap-6 fixed top-0 left-0 w-full h-full"
+    >
+      <div class="flex flex-col justify-center items-center p-4 gap-4">
+        <div
+          class="text-white bg-[#23c55e] rounded-full p-3 text-2xl"
+          aria-hidden="true"
+        >
+          ?
+        </div>
+        <h2 class="text-2xl text-[#291413] font-semibold">
+          Payment Successful!
+        </h2>
+        <p class="text-[#6b7280]">Your payment has been processed.</p>
+        <button
+          id="done-btn"
+          class="bg-black border rounded-xl text-white px-4 py-2"
+          type="button"
+        >
+          Done
+        </button>
+      </div>
+    </section>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
